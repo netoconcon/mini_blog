@@ -1,2 +1,38 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<div class="contianer">
+  <h1>User</h1>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- div class="card" -->
+      <div class = "cards">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{@user.github}", class: "img-circle", style: 'width: 100px' %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- div class="card" -->
+      <div class = "cards">
+          <br>
+          <p>Name: <%=@user.name %></p>
+          <p>GitHub: <%= @user.github %></p>
+          <p>Job: <%= @user.job %></p>
+          <br>
+      </div>
+    </div>
+  </div>
+  <div>
+    <%= link_to 'Back', users_path, class: "btn btn-primary" %>
+
+  <%= link_to 'Delete', user_path(@user),
+      method: :delete,
+      data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+
+
+
+
+  </div>
+</div>
